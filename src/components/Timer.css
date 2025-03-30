@@ -1,0 +1,25 @@
+.timer-outer-div {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(203, 200, 200);
+    height: 50px;
+    width: 300px;
+    border: 5px solid black;
+    color: black;
+    padding-left: 25px;
+}
+
+.timer-button-div {
+    margin: 10px;
+    background-color: white;
+}
+
+.timer-button {
+    margin-left: 5px;
+    background-color: black;
+}
+
+.timer-time {
+    font-size: x-large;
+    align-self: center;
+}
