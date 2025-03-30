@@ -61,13 +61,13 @@ function Timer() {
   return (
     <div className="timer-outer-div">
       <div className="timer-time">{formatTime(timePassed)}</div>
-      <div className="timer-button-div">
+      <div>
         {!isRunning ? (
-          <button onClick={startTimer}>start</button>
+          <button onClick={startTimer} className="timer-start-button timer-button">start</button>
         ) : (
-          <button onClick={stopTimer}>stop</button>
+          <button onClick={stopTimer} className="timer-stop-button timer-button">stop</button>
         )}
-        <button onClick={resetTimer} className="timer-button">reset</button>
+        <button onClick={resetTimer} className="timer-reset-button timer-button">reset</button>
       </div>
     </div>
   );

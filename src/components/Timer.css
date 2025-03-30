@@ -9,14 +9,25 @@
     padding-left: 25px;
 }
 
-.timer-button-div {
-    margin: 10px;
-    background-color: white;
+.timer-start-button {
+    background-color: green;
+}
+
+.timer-stop-button {
+    background-color: red;
+}
+
+.timer-reset-button {
+    background-color: black;
 }
 
 .timer-button {
-    margin-left: 5px;
-    background-color: black;
+    height: 100%;
+    border: none;
+}
+
+.timer-button:hover {
+    opacity: 80%;
 }
 
 .timer-time {
