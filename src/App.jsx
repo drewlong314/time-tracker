@@ -22,17 +22,26 @@ function App() {
     intervalRef.current = setInterval(() => {
       setNow(Date.now());
     }, 10);
-    setIsRunning(true)
+    setIsRunning(true);
+  };
+
+  const clearTimer = () => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
+    setStartTime(null);
+    setNow(null);
+    setIsRunning(false);
   };
 
   const stopTimer = () => {
     if (!storedTime) setStoredTime((now - startTime) / 1000);
     else setStoredTime((now - startTime) / 1000 + storedTime);
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
-    setStartTime(null);
-    setNow(null);
-    setIsRunning(false)
+    clearTimer();
+  };
+
+  const resetTimer = () => {
+    clearTimer();
+    setStoredTime(0);
   };
 
   return (
@@ -44,6 +53,7 @@ function App() {
       ) : (
         <button onClick={stopTimer}>stop</button>
       )}
+      <button onClick={resetTimer}>reset</button>
     </>
   );
 }
