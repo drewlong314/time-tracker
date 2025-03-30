@@ -15,6 +15,18 @@ function App() {
     timePassed = ((now - startTime) / 1000 + storedTime).toFixed(2);
   } else timePassed = storedTime.toFixed(2);
 
+  const formatNumber = (number) => {
+    return number.toString().padStart(2, "0")
+  }
+
+  const formatTime = (timePassed) => {
+    const convertedTime = new Date(timePassed * 1000);
+    const hours = convertedTime.getUTCHours();
+    const minutes = convertedTime.getUTCMinutes();
+    const seconds = convertedTime.getUTCSeconds();
+    return `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
+  };
+
   const startTimer = () => {
     setStartTime(Date.now());
     setNow(Date.now());
@@ -47,7 +59,7 @@ function App() {
   return (
     <>
       <h1>Time Tracker</h1>
-      <div>{timePassed}</div>
+      <div>{formatTime(timePassed)}</div>
       {!isRunning ? (
         <button onClick={startTimer}>start</button>
       ) : (
