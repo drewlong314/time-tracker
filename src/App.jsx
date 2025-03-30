@@ -6,7 +6,6 @@ function App() {
     <>
       <h1>Time Tracker</h1>
       <Timer />
-      <Timer />
     </>
   );
 }
