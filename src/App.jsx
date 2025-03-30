@@ -5,6 +5,7 @@ function App() {
   const [startTime, setStartTime] = useState(null);
   const [now, setNow] = useState(null);
   const [storedTime, setStoredTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(null);
 
   let timePassed = 0;
@@ -21,6 +22,7 @@ function App() {
     intervalRef.current = setInterval(() => {
       setNow(Date.now());
     }, 10);
+    setIsRunning(true)
   };
 
   const stopTimer = () => {
@@ -30,14 +32,18 @@ function App() {
     intervalRef.current = null;
     setStartTime(null);
     setNow(null);
+    setIsRunning(false)
   };
 
   return (
     <>
       <h1>Time Tracker</h1>
       <div>{timePassed}</div>
-      <button onClick={startTimer}>start</button>
-      <button onClick={stopTimer}>stop</button>
+      {!isRunning ? (
+        <button onClick={startTimer}>start</button>
+      ) : (
+        <button onClick={stopTimer}>stop</button>
+      )}
     </>
   );
 }
