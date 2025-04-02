@@ -35,7 +35,7 @@ Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
 
 ## Technologies Used
 - React
-- JavaScript (ES6+)
+- Typescript
 - CSS for styling
 
 ## Future Improvements
